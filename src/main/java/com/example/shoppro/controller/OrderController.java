@@ -46,8 +46,12 @@ public class OrderController {
     public   ResponseEntity order(@Valid OrderDTO orderDTO, BindingResult bindingResult , Principal principal){
 
 
+<<<<<<< HEAD
         //만약에 아이템id가 없다면
         //만약에 수량이 없다면
+=======
+
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
         // 유효성검사
         if(bindingResult.hasErrors()){
             StringBuffer sb = new StringBuffer();       //String
@@ -91,7 +95,13 @@ public class OrderController {
         log.info("진입");
         if(principal ==null){
             log.info("로그인이 필요함");
+<<<<<<< HEAD
 
+=======
+            log.info("로그인이 필요함");
+            log.info("로그인이 필요함");
+            log.info("로그인이 필요함");
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 
             return "redirect:/members/login";
         }
@@ -105,9 +115,12 @@ public class OrderController {
         orderService.getOrderList(email, pageable);
         //페이징처리에 필요하던것들 start end next pre t/f   total
 
+<<<<<<< HEAD
         //단방향이라면
         //order , orderItem을 가져온다.  pk값 email을 가지고 가져온다.
 
+=======
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
         model.addAttribute("orders" , orderHistDTOPage);
         //html 들어가서 getContent() 함수 호출
         model.addAttribute("page", pageable.getPageNumber());
@@ -116,6 +129,7 @@ public class OrderController {
         return "order/orderHist";
     }
 
+<<<<<<< HEAD
     @PostMapping("/order/{orderId}/cancel")
     public  ResponseEntity cancelOrder(
             @PathVariable("orderId") Long orderId , Principal principal){
@@ -145,6 +159,8 @@ public class OrderController {
 
     }
 
+=======
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 
 
 

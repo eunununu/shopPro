@@ -16,7 +16,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
 import org.thymeleaf.util.StringUtils;
+=======
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -40,6 +43,7 @@ public class OrderService {
     // 단 주문목록들이 들어있는 주문row한개는 누구의 주문인지 알기위해서
     // email을 받는다.
 
+<<<<<<< HEAD
 
     //내 주문이 맞는지 체크
     public boolean validateOrder(Long orderId, String email){
@@ -94,6 +98,8 @@ public class OrderService {
     }
 
 
+=======
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
     public Long order(OrderDTO orderDTO, String email){   //principal.getName()로 가져온다. 로그인을 했다면
         //현재 선택한 아이템의 id는 orderDTO로 들어온다 이값으로 판매중인 item Entity를 가져온다.
         Item  item = itemRepository.findById(  orderDTO.getItemId()  )
@@ -122,7 +128,11 @@ public class OrderService {
             order.setMember(member);    //구매한 사람 email로 찾아온 entity객체
 
             order.setOrderItemList(orderItem); //주문목록 이건 새로 만든 setOrderItemList이다.
+<<<<<<< HEAD
             //어떻게 만들었는지 Order객체를 참조할 것   그리고 아래 저장직전 주석 참조
+=======
+            //어떻게 만들었는지 Order객체를 참조할 것   그리고 아래 저장직전 주석 참조 
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 
             order.setOrderStatus(OrderStatus.ORDER);     //주문상태
             order.setOrderDate(LocalDateTime.now());    //주문시간
@@ -170,7 +180,11 @@ public class OrderService {
 
             OrderHistDTO orderHistDTO = new OrderHistDTO();
             orderHistDTO.setOrderId(order.getId());
+<<<<<<< HEAD
             orderHistDTO.setOrderDate(order.getOrderDate());
+=======
+            orderHistDTO.setOrderDate(order.getOrderDate().toString());
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
             orderHistDTO.setOrderStatus(order.getOrderStatus());
 
             List<OrderItem> orderItemList = order.getOrderItemList();

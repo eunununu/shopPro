@@ -21,11 +21,19 @@
 
         <th:block th:each="orderHistDTO: ${orders.getContent()}">
 
+<<<<<<< HEAD
             <h4 th:text="${#temporals.format(orderHistDTO.orderDate, 'yyyy-MM-dd HH:mm')} + ' 주문'"></h4>
             <div class="ms-3">
 
                 <th:block  th:if="${orderHistDTO.orderStatus.name() == 'ORDER'}">
                     <button type="button" th:value="${orderHistDTO.orderId}" class="cancelbtn"> 주문취소</button>
+=======
+            <h4 th:text="${orderHistDTO.orderDate} + ' 주문'"></h4>
+            <div class="ms-3">
+
+                <th:block th:if="${orderHistDTO.orderStatus.name() == 'ORDER'}">
+                    <button> 주문취소</button>
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
                 </th:block>
                 <th:block th:unless="${orderHistDTO.orderStatus.name() == 'ORDER'}">
                     <h4>(취소 완료)</h4>
@@ -62,6 +70,7 @@
 
         </th:block>
 
+<<<<<<< HEAD
         <th:block th:with="start=${ (orders.number/maxPage)*maxPage+1}, end=(${(orders.totalPages == 0 ) ?  1 : (start + (maxPage -1 ) < orders.totalPages ? start + (maxPage -1 ) : orders.totalPages)})">
 
             <nav aria-label="Page navigation example">
@@ -86,6 +95,22 @@
 
                     <li class="page-item" th:classappend="${orders.number+1 ge orders.totalPages} ? 'disabled':'' ">
                         <a   class="page-link" th:href="@{'/orders/' + ${orders.number +1}}" aria-label="Next">
+=======
+        <th:block th:with="start=${ (orders.number/maxPage)*maxPage+1}, end=(${(orders.totalPages == 0 )? 1 : (start + (maxPage -1 ) < orders.totalPages ? start + (maxPage -1 ) : orders.totalPages)})">
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
@@ -96,6 +121,7 @@
         </th:block>
 
     </th:block>
+<<<<<<< HEAD
     
     <script th:inline="javascript">
         $(document).ready(function () {
@@ -143,6 +169,8 @@
         
         
     </script>
+=======
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 
 </th:block>
 

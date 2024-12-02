@@ -1,14 +1,19 @@
 package com.example.shoppro.repository;
 
+<<<<<<< HEAD
 import com.example.shoppro.dto.OrderDTO;
 import com.example.shoppro.dto.OrderHistDTO;
 import com.example.shoppro.dto.OrderItemDTO;
 import com.example.shoppro.entity.Order;
 import com.example.shoppro.entity.OrderItem;
+=======
+import com.example.shoppro.entity.Order;
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 import jakarta.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
 import org.aspectj.weaver.ast.Or;
 import org.junit.jupiter.api.Test;
+<<<<<<< HEAD
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +24,14 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,6 +42,7 @@ class OrderRepositoryTest {
     @Autowired
     OrderRepository orderRepository;
 
+<<<<<<< HEAD
     @Autowired
     OrderItemRepository orderItemRepository;
 
@@ -98,6 +112,8 @@ class OrderRepositoryTest {
 
     }
 
+=======
+>>>>>>> 34aff984372ebba71d2758e8ad97f93fe4cb4630
 
     @Test
     @Transactional
